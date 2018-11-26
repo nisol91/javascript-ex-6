@@ -8,6 +8,8 @@ var sesso = prompt('Inserisci sesso');
 var testo = document.getElementById('text')
 testo.innerHTML = 'Ciao ';
 var nome = document.getElementById('name')
+nome.innerHTML = id;
+
 if (sesso == 'maschio') {
   // nome.style.color = 'lightblue';
   nome.className = 'blue';
@@ -15,4 +17,3 @@ if (sesso == 'maschio') {
   // nome.style.color = 'pink';
   nome.className = 'pink';
 }
-nome.innerHTML = id;
