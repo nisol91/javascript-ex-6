@@ -17,7 +17,7 @@ for (var i = 0; i < 5; i++) {
 }
 console.log(num);
 
-setTimeout(function () {
+var controllo = setTimeout(function () {
   var arr = [];
   for (var i = 0; i < 5; i++) {
     var numero = parseInt(prompt('Inserisci numero'));
