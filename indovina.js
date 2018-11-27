@@ -17,6 +17,18 @@ for (var i = 0; i < 5; i++) {
 }
 console.log(num);
 
+
+var tempo = 5000 + 1000;
+var numero = (tempo/1000);
+var timer = setInterval(function () {
+  numero -= 1;
+  document.getElementById('text').innerHTML = numero;
+  console.log(numero);
+  if (numero === 0) {
+    clearInterval(timer);
+  }
+}, 1000);
+
 var controllo = setTimeout(function () {
   var arr = [];
   for (var i = 0; i < 5; i++) {
@@ -28,9 +40,16 @@ var controllo = setTimeout(function () {
     if (arr[i] === num[i]) {
       console.log('il numero ' + i + ' (' + num[i] + ') ' + ' è stato indovinato');
       // document.writeln('il numero ' + i + ' (' + num[i] + ') ' + ' è stato indovinato' + '<br>');
+      document.getElementById('array').innerHTML += ('il numero ' + i + ' (' + num[i] + ') ' + ' è stato indovinato' + '<br>');
+      //IMPORTANTE: se voglio aggiungere (e NON sovrascrivere!) frasi o risultati nell .innerHTML, la dicitura deve avere ‘+=’ e non solo ‘=’.
     } else {
       console.log('il numero ' + i + ' (' + num[i] + ') ' + ' è stato sbagliato');
       // document.writeln('il numero ' + i + ' (' + num[i] + ') ' + ' è stato sbagliato' + '<br>');
+      document.getElementById('result').innerHTML += ('il numero ' + i + ' (' + num[i] + ') ' + ' è stato sbagliato' + '<br>');
     }
   }
-}, 1000);
+  // document.writeln('i numeri di CPU: ' + num + '<br>');
+  // document.writeln('i tuoi numeri: ' + arr);
+  document.getElementById('n_1').innerHTML = 'i numeri di CPU: ' + num + '<br>';
+  document.getElementById('n_2').innerHTML = 'i tuoi numeri: ' + arr;
+}, tempo);
